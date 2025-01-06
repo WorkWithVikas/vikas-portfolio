@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Rathore</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Vikas Rathore</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero" style="background-image: url('main.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <img src="vikas.jpg" alt="Vikas Rathore" class="profile-icon"> <!-- Profile Image -->
+            <h2>Hello, I'm <span>Vikas Rathore</span></h2>
+            <p>Java Desktop App Developer | Web Enthusiast</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I specialize in developing Java-based desktop applications using Swing, JavaFX, and backend integration with JDBC and MySQL. With additional skills in HTML, CSS, and JavaScript, I aim to bridge the gap between desktop and web technologies.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">Java (OOPs, Swing, JavaFX)</div>
+            <div class="skill">JDBC & MySQL</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">JavaScript</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Your Notepad</h3>
+                <p>A Java desktop app to Notepad with MySQL backend.</p>
+                <a href="https://github.com/WorkWithVikas/Your-NotePad" target="_blank" class="btn">View on GitHub</a>
+            </div>
+            <div class="project-item">
+                <h3>Tik-Tok-Toe Game </h3>
+                <p>A desktop Game app Tik-Tok-Toe Game using JavaFX.</p>
+                <a href="https://github.com/WorkWithVikas/Tik-Tok-Toe" target="_blank" class="btn">View on GitHub</a>
+            </div>
+            <div class="project-item">
+                <h3>Other Projects</h3>
+                <a href="https://github.com/WorkWithVikas" target="_blank" class="btn">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><strong>Email:</strong> mrvikas2510@gmail.com</p>
+                <p><strong>Phone:</strong> +91 6390389940</p>
+                <p><strong>Address:</strong> Kannuj, Kanpur, Uttar Pradesh, India</p>
+                <p><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/01vikasrathore" target="_blank">linkedin.com/in/vikasrathore</a></p>
+            </div>
+            <form action="" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Link to JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Smooth Scroll
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = document.querySelector(event.target.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <!-- CSS for Profile Image -->
+    <style>
+        .profile-icon {
+            width: 150px; /* Image size */
+            height: 150px;
+            border-radius: 50%; /* Circular shape */
+            object-fit: cover; /* Crop image properly */
+            border: 3px solid #fff; /* White border */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            margin-bottom: 15px; /* Spacing */
+        }
+
+        @media (max-width: 600px) {
+            .profile-icon {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .dark-mode .profile-icon {
+            border: 3px solid #ddd; /* Light border for dark mode */
+        }
+    </style>
+</body>
+</html>
