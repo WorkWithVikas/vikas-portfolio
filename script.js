@@ -4,9 +4,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-
         window.scrollTo({
-            top: targetElement.offsetTop - 50,
+            top: targetElement.offsetTop - 50, // Adjust for fixed navbar height
             behavior: 'smooth'
         });
     });
@@ -16,11 +15,10 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
-
     let current = '';
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 100; // Adjust for offset
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute('id');
         }
@@ -38,14 +36,4 @@ window.addEventListener('scroll', () => {
 const toggleButton = document.getElementById('dark-mode-toggle');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-});
-
-// Smooth Scroll
-const links = document.querySelectorAll('.nav-links a');
-links.forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const target = document.querySelector(event.target.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-    });
 });
